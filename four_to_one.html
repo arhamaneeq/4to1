@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>4 to 1 — IIT Indore</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
+<style>
+:root{--bg:#f1ede3;--card:#fffdf8;--ink:#141a45;--mut:#666c94;--bl:#4a5a9a;--bl2:#7388b0;--soft:#e8e2d4;--line:#e0d9c9;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0d1130;--card:#161b42;--ink:#f2ede1;--mut:#9aa1c8;--bl:#8da0ea;--bl2:#5c6eb0;--soft:#1e2452;--line:#272e60;--on:#0d1130}}
+:root[data-theme=dark]{--bg:#0d1130;--card:#161b42;--ink:#f2ede1;--mut:#9aa1c8;--bl:#8da0ea;--bl2:#5c6eb0;--soft:#1e2452;--line:#272e60;--on:#0d1130}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}body{background:var(--bg);color:var(--ink);font:15px/1.4 'DM Sans',system-ui,sans-serif;overflow:hidden}
+button,input,select,textarea{font:inherit;color:inherit}button{background:none;border:0;cursor:pointer;text-align:left}
+#app{height:100%;width:100%;max-width:100%;display:flex;flex-direction:column;position:relative;background:var(--bg);overflow:hidden}
+@media(min-width:520px){body{display:grid;place-items:center;background:var(--soft)}#app{width:390px;height:min(844px,calc(100% - 32px));border-radius:38px;border:1px solid var(--line);box-shadow:0 24px 70px rgba(20,26,69,.2)}}
+.scr{flex:1;overflow-y:auto;overflow-x:hidden;padding:0 16px 28px}
+.top,.bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0 10px}
+.logo{font:700 24px 'Unbounded';letter-spacing:-.5px}.h1{font:700 20px 'Unbounded'}
+.campus{display:inline-flex;gap:4px;align-items:center;color:var(--bl);font-weight:700;font-size:12.5px;margin-top:2px}
+.ib{width:42px;height:42px;border-radius:14px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;position:relative;flex:none}
+.dot{position:absolute;top:9px;right:10px;width:8px;height:8px;border-radius:9px;background:#e0674b;border:2px solid var(--card)}
+.search{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 14px;height:50px;color:var(--mut)}
+.search input{flex:1;border:0;background:none;outline:0;min-width:0;color:var(--ink)}
+.trust{display:flex;gap:6px;align-items:center;color:var(--mut);font-size:12.5px;margin:10px 2px 4px}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0 10px}.sec b{font-size:17px}.sec button{color:var(--bl);font-weight:700;font-size:13px}
+.row{display:flex;gap:10px;overflow-x:auto;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none}.row::-webkit-scrollbar{display:none}
+.cat{flex:none;width:76px;text-align:center;font-size:12px;font-weight:500}.cat div{width:76px;height:64px;border-radius:18px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;margin-bottom:5px}.cat svg{width:44px}.cat.on div{border-color:var(--bl);background:var(--soft)}.cat.on{font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:block;width:100%;box-shadow:0 1px 2px rgba(20,26,69,.05)}.card:active{transform:scale(.98)}
+.pop .card{width:158px;flex:none}
+.ph{position:relative}.art{display:grid;place-items:center;aspect-ratio:1;width:100%;object-fit:cover}.art svg{width:80%}
+.ov{position:absolute;inset:0;background:rgba(13,17,48,.55);color:#fff;display:grid;place-items:center;font-weight:700}
+.cb{padding:10px 12px 12px}.ct{font-weight:500;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cp{font:700 16px 'Unbounded';margin:3px 0 7px;letter-spacing:-.3px}
+.cm{display:flex;justify-content:space-between;align-items:center;color:var(--mut);font-size:11.5px;gap:4px}
+.pill{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11.5px;font-weight:700;white-space:nowrap;background:color-mix(in srgb,currentColor 15%,transparent)}
+.cta{background:var(--bl);color:var(--on);border-radius:22px;padding:20px;margin-top:24px}.cta b{font:700 18px/1.25 'Unbounded';display:block;margin-bottom:6px}.cta p{opacity:.85;font-size:13.5px;margin-bottom:14px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--bl);color:var(--on);border-radius:14px;padding:14px;font-weight:700;text-align:center}.btn.sm{width:auto;padding:10px 16px;display:inline-flex}.btn.w{background:var(--on);color:var(--bl)}.btn.s{background:var(--soft);color:var(--ink)}.btn[disabled]{opacity:.5}
+.chips{display:flex;gap:8px;overflow-x:auto;margin:0 -16px;padding:2px 16px;scrollbar-width:none}.chip{flex:none;padding:8px 14px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:500}.chip.on{background:var(--bl);color:var(--on);border-color:var(--bl)}
+.nav{display:flex;align-items:flex-end;background:var(--card);border-top:1px solid var(--line);padding:6px 6px 8px}.nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:500;color:var(--mut);padding:6px 0;min-height:48px}.nav .on{color:var(--bl);font-weight:700}
+.nav .sell span{width:52px;height:52px;border-radius:18px;background:var(--bl);color:var(--on);display:grid;place-items:center;margin-top:-22px;box-shadow:0 6px 16px rgba(74,90,154,.45);border:4px solid var(--bg)}.nav .sell{color:var(--ink)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:12px}.note{display:flex;gap:10px;font-size:12.5px;color:var(--mut);background:var(--soft);border-radius:14px;padding:12px;margin-top:12px}.note svg{flex:none;color:var(--bl)}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;scrollbar-width:none}.gal>*{flex:0 0 100%;scroll-snap-align:start;overflow:hidden}
+.cnt{position:absolute;right:28px;margin-top:-34px;background:rgba(13,17,48,.6);color:#fff;font-size:12px;padding:3px 10px;border-radius:99px}
+.act{position:sticky;bottom:-28px;margin:16px -16px -28px;padding:12px 16px 16px;background:var(--bg);border-top:1px solid var(--line);display:flex;gap:14px;align-items:center}.act .cp{margin:0;font-size:20px}
+.inp{width:100%;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;outline:0}.inp:focus,.search:focus-within{border-color:var(--bl)}.err{color:#d2503f;font-size:12.5px;margin-top:4px}
+.lab{font-weight:700;font-size:13.5px;margin:16px 0 6px;display:block}.lab small{color:var(--mut);font-weight:400}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.opt{border:1.5px solid var(--line);background:var(--card);border-radius:14px;padding:11px}.opt.on{border-color:var(--bl);background:var(--soft)}.opt small{display:block;color:var(--mut);font-size:11.5px;margin-top:2px}
+.ph5{display:flex;gap:8px;flex-wrap:wrap}.ph5>*{width:76px;height:76px;border-radius:14px;overflow:hidden;position:relative;border:1px solid var(--line)}.ph5 img{width:100%;height:100%;object-fit:cover}.ph5 .x{position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:9px;background:rgba(13,17,48,.7);color:#fff;display:grid;place-items:center}
+.add{display:grid;place-items:center;border:1.5px dashed var(--bl2)!important;color:var(--bl);background:var(--card)}
+.seg{display:flex;background:var(--soft);border-radius:14px;padding:4px;margin-bottom:14px}.seg button{flex:1;text-align:center;padding:9px;border-radius:11px;font-weight:700;font-size:13.5px;color:var(--mut)}.seg .on{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(20,26,69,.12)}
+.tx{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px;margin-bottom:12px}.tr{display:flex;gap:12px;width:100%;align-items:center}.th{width:62px;height:62px;border-radius:14px;overflow:hidden;flex:none}.th .art{height:100%}
+.prog{display:flex;gap:4px;margin:12px 0 2px}.prog i{flex:1;height:4px;border-radius:4px;background:var(--line)}.prog i.f{background:var(--bl)}
+.tl{margin:12px 0 4px}.tl div{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--mut);padding:5px 0}.tl i{width:18px;height:18px;border-radius:9px;border:2px solid var(--line);display:grid;place-items:center;flex:none;color:var(--on)}.tl .f i{background:var(--bl);border-color:var(--bl)}.tl .f{color:var(--ink)}.tl .c{font-weight:700}
+.mr{display:flex;align-items:center;gap:12px;width:100%;padding:14px 0;border-bottom:1px solid var(--line)}.mr svg:first-child{color:var(--bl)}.mr span{flex:1;font-weight:500}.mr:last-child{border:0}
+.sheet{position:absolute;inset:0;background:rgba(13,17,48,.5);display:flex;align-items:flex-end;z-index:9}.sheet>div{background:var(--bg);width:100%;max-height:88%;overflow-y:auto;border-radius:26px 26px 0 0;padding:20px 18px 28px}
+.toast{position:absolute;left:50%;transform:translateX(-50%);bottom:90px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:500;font-size:13.5px;z-index:10;white-space:nowrap}
+.empty{text-align:center;padding:40px 20px;color:var(--mut)}.empty svg{width:90px;opacity:.5}.empty b{display:block;color:var(--ink);font-size:17px;margin:8px 0 4px}
+.nrow{display:flex;gap:12px;width:100%;padding:14px 0;border-bottom:1px solid var(--line);align-items:flex-start}.nrow .ib{width:38px;height:38px;border-radius:12px;color:var(--bl)}.nrow.u .ib{background:var(--soft)}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px}.stat b{font:700 17px 'Unbounded';display:block}.stat span{font-size:11.5px;color:var(--mut)}
+.av{width:68px;height:68px;border-radius:24px;background:var(--bl);color:var(--on);display:grid;place-items:center;font:700 24px 'Unbounded'}
+</style></head><body><div id="app"></div>
+<script>
+const {useState,useRef,useContext,createContext}=React,html=htm.bind(React.createElement);
+const fmt=n=>'₹'+Number(n).toLocaleString('en-IN');
+const I={home:'<path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',search:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',plus:'<path d="M12 5v14M5 12h14"/>',bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0"/>',user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',list:'<path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/>',compass:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',back:'<path d="M15 18l-6-6 6-6"/>',next:'<path d="M9 18l6-6-6-6"/>',pin:'<path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',check:'<path d="M5 12l5 5 9-9"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>',image:'<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/>',lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',sl:'<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',out:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',box:'<path d="M21 8l-9-5-9 5v8l9 5 9-5zM3 8l9 5 9-5M12 13v8"/>',tag:'<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/>'};
+const Ic=({n,s=20})=>html`<svg width=${s} height=${s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML=${{__html:I[n]}}/>`;
+const kb=[0,1,2].flatMap(r=>Array.from({length:9},(_,c)=>`<rect x="${15+c*8.2}" y="${39+r*9}" width="6" height="6" rx="1.5" fill="#aab0d4"/>`)).join('');
+const G={
+calc:'<rect x="30" y="12" width="40" height="74" rx="7" fill="#2a2f55"/><rect x="36" y="19" width="28" height="13" rx="2" fill="#b7d4a8"/>'+[0,1,2].flatMap(i=>[0,1,2,3].map(j=>`<rect x="${37+i*9.5}" y="${38+j*11}" width="7.5" height="8" rx="2" fill="${i==2&&j==3?'#f08a4b':'#8f94bb'}"/>`)).join(''),
+bike:'<g fill="none" stroke="#141a45" stroke-width="3"><circle cx="25" cy="62" r="17"/><circle cx="75" cy="62" r="17"/></g><path d="M25 62L42 38H64L75 62M42 38L52 62H25M52 62L64 38M36 32h12M62 38l-3-8h8" stroke="#4a5a9a" stroke-width="3.5" fill="none" stroke-linejoin="round"/>',
+table:'<rect x="12" y="38" width="76" height="8" rx="2" fill="#c99a68"/><path d="M20 46v36M80 46v36" stroke="#7b5a38" stroke-width="5"/><rect x="54" y="46" width="26" height="18" rx="2" fill="#a97d4c"/><rect x="58" y="22" width="22" height="16" rx="2" fill="#4a5a9a"/>',
+chair:'<rect x="32" y="14" width="36" height="32" rx="9" fill="#4a5a9a"/><rect x="27" y="48" width="46" height="10" rx="5" fill="#2b3470"/><path d="M50 58v18M30 84h40M36 84l14-8 14 8" stroke="#141a45" stroke-width="4" fill="none" stroke-linecap="round"/>',
+kettle:'<path d="M30 82V46q0-18 22-18t22 18v36z" fill="#dfe3ee" stroke="#141a45" stroke-width="3"/><path d="M74 44q16 2 14 20" fill="none" stroke="#141a45" stroke-width="4"/><rect x="40" y="21" width="24" height="8" rx="3" fill="#4a5a9a"/><rect x="30" y="82" width="44" height="5" rx="2" fill="#141a45"/><rect x="44" y="52" width="16" height="3" rx="1.5" fill="#4a5a9a"/>',
+books:'<rect x="22" y="62" width="58" height="13" rx="2" fill="#4a5a9a"/><rect x="26" y="48" width="52" height="13" rx="2" fill="#c8745a"/><rect x="20" y="34" width="54" height="13" rx="2" fill="#5d8a6a"/><rect x="28" y="20" width="48" height="13" rx="2" fill="#e0b25a"/>',
+monitor:'<rect x="14" y="22" width="72" height="46" rx="4" fill="#141a45"/><rect x="18" y="26" width="64" height="38" fill="#7388b0"/><path d="M50 68v12M36 82h28" stroke="#141a45" stroke-width="4" stroke-linecap="round"/>',
+keyboard:'<rect x="10" y="34" width="80" height="32" rx="6" fill="#2a2f55"/>'+kb,
+mattress:'<path d="M10 52l50-18 30 12-50 20z" fill="#f6f1e5" stroke="#141a45" stroke-width="2.5" stroke-linejoin="round"/><path d="M10 52v10l30 16V66M90 46v10L40 78" fill="#d9d1bd" stroke="#141a45" stroke-width="2.5" stroke-linejoin="round"/>',
+racket:'<g transform="rotate(35 50 50)"><ellipse cx="50" cy="32" rx="17" ry="22" fill="none" stroke="#4a5a9a" stroke-width="4"/><path d="M38 24h24M36 32h28M38 40h24M44 14v36M56 14v36" stroke="#9aa6d6"/><rect x="47" y="54" width="6" height="30" rx="3" fill="#141a45"/></g>',
+lamp:'<ellipse cx="42" cy="82" rx="18" ry="4" fill="#141a45"/><path d="M42 82L50 50L38 30" stroke="#141a45" stroke-width="4" fill="none"/><path d="M24 24l26-8 8 16-26 8z" fill="#4a5a9a"/><path d="M32 42l-8 12M42 44l-2 14M52 40l6 12" stroke="#f0c75e" stroke-width="3" stroke-linecap="round"/>',
+bucket:'<path d="M26 40h48l-6 42H32z" fill="#4a5a9a"/><ellipse cx="50" cy="40" rx="24" ry="5" fill="#2b3470"/><path d="M28 38Q50 4 72 38" fill="none" stroke="#141a45" stroke-width="3"/>'};
+const CATS=['Electronics','Furniture','Books','Cycles','Appliances','Sports','Others'],CA={Electronics:'monitor',Furniture:'chair',Books:'books',Cycles:'bike',Appliances:'kettle',Sports:'racket',Others:'bucket'};
+const CONDS=[['New','Unused, potentially unopened'],['Like New','Minimal use, negligible wear'],['Good','Some visible signs of wear'],['Fair','Noticeable wear, still usable']];
+const CC={New:'#1f9a70','Like New':'#4a7be0',Good:'#c0841a',Fair:'#c0663f'};
+const DISC='All products on 4 to 1 are listed through peer-to-peer resale. Even products marked New are not retail listings. The condition label describes the physical state of the product, not its retail status.';
+const Gl=({k})=>html`<svg viewBox="0 0 100 100" dangerouslySetInnerHTML=${{__html:'<ellipse cx="50" cy="88" rx="30" ry="3.5" fill="#141a45" opacity=".12"/>'+G[k]}}/>`;
+const Art=({k,h,i=0})=>html`<div className="art" style=${{background:`hsl(${(h+i*14)%360} 32% 89%)`}}><div style=${{width:'100%',display:'grid',placeItems:'center',transform:['','scale(1.35) translateY(5%)','rotate(-7deg) scale(.9)'][i]}}><${Gl} k=${k}/></div></div>`;
+const Img=({p,i=0})=>p.imgs&&p.imgs[i]?html`<img className="art" src=${p.imgs[i]} alt=${p.t}/>`:html`<${Art} k=${p.art} h=${p.h} i=${i}/>`;
+const Pill=({c})=>html`<span className="pill" style=${{color:CC[c]}}>${c}</span>`;
+const P=(id,t,p,c,cond,art,h,days,pop,d,own)=>({id,t,p,c,cond,art,h,days,pop,d,own:!!own,st:'Active',av:'Available now',loc:'IIT Indore hostels'});
+const ITEMS=[
+P(1,'Casio fx-991ES Plus Calculator',850,'Electronics','Good','calc',210,1,1,'Scientific calculator, 417 functions. Works perfectly, minor scratches on the case. Cover included.'),
+P(2,'Hero Sprint 26-inch Bicycle',3200,'Cycles','Good','bike',30,2,1,'Single-speed cycle used for two years. New tubes fitted last semester, brakes recently adjusted. Includes a lock.'),
+P(3,'Study Table with Shelf',1400,'Furniture','Good','table',28,3,0,'Sturdy wooden study table with a side shelf. A few water rings on the top, otherwise solid.'),
+P(4,'Ergonomic Office Chair',2200,'Furniture','Like New','chair',225,1,1,'Mesh-back chair with adjustable height and lumbar support. Used for one semester only.'),
+P(5,'Prestige Electric Kettle 1.5 L',450,'Appliances','Like New','kettle',200,4,0,'Auto shut-off kettle. Used a handful of times, no scale or stains.'),
+P(6,'HC Verma Concepts of Physics, Vol 1 & 2',380,'Books','Good','books',15,2,0,'Both volumes with some pencil notes in the margins. Spine in good shape.'),
+P(7,'Dell 22-inch FHD Monitor',4800,'Electronics','Good','monitor',220,1,1,'1080p IPS monitor with HDMI and VGA. No dead pixels. Stand and cable included.'),
+P(8,'Logitech K380 Bluetooth Keyboard',1100,'Electronics','Like New','keyboard',240,5,0,'Compact multi-device keyboard. Pairs with up to three devices. Fresh batteries.'),
+P(9,'Single Mattress, 6×3 ft',1800,'Furniture','Fair','mattress',40,6,0,'5-inch foam mattress. Slightly worn at one edge, clean and comfortable.'),
+P(10,'Yonex Badminton Racket',900,'Sports','Good','racket',150,3,1,'Lightweight racket with a fresh grip and strings. Comes with a padded cover.'),
+P(11,'Philips LED Study Lamp',320,'Appliances','New','lamp',45,2,0,'Unused, box opened only to test. Three brightness levels and a flexible neck.'),
+P(12,'Bucket & Mug Set',120,'Others','Good','bucket',205,7,0,'Sturdy 16 L bucket with a matching mug. Hostel essential.'),
+P(13,'Atlas Geared Cycle',4500,'Cycles','Like New','bike',170,1,1,'Six-speed cycle with front suspension. Ridden mostly on campus roads.'),
+P(14,'Casio fx-82MS Calculator',550,'Electronics','Fair','calc',250,8,0,'Reliable first-year calculator. Worn keys, display is crisp.'),
+P(15,'Engineering Drawing Kit + Mini Drafter',500,'Books','Good','books',60,5,0,'Drafter, set squares, compass and protractor in one case. All pieces present.'),
+P(16,'Cosco Racket Pair',650,'Sports','Fair','racket',100,9,0,'Two rackets for casual games. Strings slightly loose, frames intact.'),
+P(17,'Wooden Bookshelf',1600,'Furniture','Good','table',35,3,0,'Four-tier shelf that holds a full semester of books. Easy to disassemble.',1),
+P(18,'Casio fx-115ES Plus Calculator',900,'Electronics','Like New','calc',215,4,0,'Barely used, in the original sleeve.',1),
+P(19,'Chemistry Notes & Lab Manual',250,'Books','Good','books',20,6,0,'Printed notes and the full first-year lab manual.',1)];
+const TX=[{id:'T1',pid:7,role:'buy',st:'Payment Pending',w:'Updated 2 h ago'},{id:'T2',pid:2,role:'buy',st:'Awaiting Confirmation',w:'Updated yesterday'},{id:'T3',pid:5,role:'buy',st:'Completed',w:'Completed 4 days ago'},{id:'T4',pid:18,role:'sell',st:'Request Submitted',w:'Updated 5 h ago',b:'2041'},{id:'T5',pid:17,role:'sell',st:'Handover Pending',w:'Updated yesterday',b:'1187'},{id:'T6',pid:19,role:'sell',st:'Completed',w:'Completed 2 days ago',b:'3302'}];
+const N=(t,to,k='bell')=>({id:Math.random(),t,to,k,w:'Just now',u:1});
+const NF=[{id:1,k:'clock',u:1,w:'2 h ago',to:['act','buy'],t:'Payment instructions are ready for the Dell 22-inch monitor.'},{id:2,k:'box',u:1,w:'5 h ago',to:['mine'],t:'Your listing Casio fx-115ES Plus has a new purchase request.'},{id:3,k:'info',u:0,w:'Yesterday',to:['act','buy'],t:'4 to 1 is checking availability for the Hero Sprint bicycle.'},{id:4,k:'box',u:0,w:'Yesterday',to:['act','sell'],t:'Handover update: collection for Wooden Bookshelf is being scheduled.'},{id:5,k:'check',u:0,w:'2 days ago',to:['act','sell'],t:'Sale completed: Chemistry Notes & Lab Manual.'},{id:6,k:'check',u:0,w:'4 days ago',to:['act','buy'],t:'Purchase completed: Prestige Electric Kettle.'}];
+const K='4to1-v3',init=()=>({items:ITEMS,tx:TX,nf:NF});
+const load=()=>{try{return JSON.parse(localStorage.getItem(K))||init()}catch(e){return init()}},save=s=>{try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}};
+const NEXT={'Request Submitted':'Awaiting Confirmation','Awaiting Confirmation':'Confirmed',Confirmed:'Payment Pending','Payment Pending':'Handover Pending','Handover Pending':'Ready for Collection','Ready for Collection':'Completed'};
+const STEP={'Request Submitted':0,'Awaiting Confirmation':0,Confirmed:1,'Payment Pending':2,'Handover Pending':3,'Ready for Collection':3,Completed:4,Cancelled:-1};
+const STEPS=['Request','Confirmation','Payment','Handover','Completed'];
+const SX={'Request Submitted':'4 to 1 has received the request.','Awaiting Confirmation':'4 to 1 is confirming availability with the other side.',Confirmed:'Availability and details are confirmed.','Payment Pending':'Payment is being coordinated through 4 to 1.','Handover Pending':'Collection is being scheduled. The item is not yet marked ready.','Ready for Collection':'4 to 1 has confirmed the item is ready for collection.',Completed:'Handover complete. Thanks for using 4 to 1.',Cancelled:'This request was cancelled.'};
+const SC=s=>s==='Completed'?'#1f9a70':s==='Cancelled'?'#d2503f':s==='Payment Pending'?'#c0841a':'var(--bl)';
+const Cx=createContext(),useX=()=>useContext(Cx);
+
+const Card=({p})=>{const X=useX();return html`<button className="card" onClick=${()=>X.open(p.id)}><div className="ph"><${Img} p=${p}/>${p.st!=='Active'&&html`<span className="ov">${p.st}</span>`}</div><div className="cb"><div className="ct">${p.t}</div><div className="cp">${fmt(p.p)}</div><div className="cm"><${Pill} c=${p.cond}/><span>${p.c}</span></div></div></button>`};
+const Bar=({t,back,right})=>html`<div className="bar"><div style=${{display:'flex',alignItems:'center',gap:10}}>${back&&html`<button className="ib" aria-label="Back" onClick=${back}><${Ic} n="back"/></button>`}<span className="h1">${t}</span></div>${right}</div>`;
+const Sheet=({close,children})=>html`<div className="sheet" onClick=${close}><div onClick=${e=>e.stopPropagation()}>${children}</div></div>`;
+
+function Home(){const X=useX(),L=X.S.items.filter(i=>i.st==='Active'),un=X.S.nf.some(n=>n.u);
+return html`<div className="scr">
+<div className="top"><div><div className="logo">4 to 1</div><span className="campus"><${Ic} n="pin" s=${13}/>IIT Indore</span></div><button className="ib" aria-label="Notifications" onClick=${()=>X.go('notifs')}><${Ic} n="bell"/>${un&&html`<i className="dot"/>`}</button></div>
+<label className="search"><${Ic} n="search"/><input placeholder="Search calculators, cycles, books…" value=${X.q} onChange=${e=>X.setQ(e.target.value)} onFocus=${()=>{X.setFo(1);X.tabTo('explore')}}/></label>
+<div className="trust"><${Ic} n="shield" s=${15}/>Verified IIT Indore students only</div>
+<div className="row" style=${{marginTop:14}}>${CATS.map(c=>html`<button key=${c} className="cat" onClick=${()=>{X.setF({...X.F,cat:c});X.tabTo('explore')}}><div><${Gl} k=${CA[c]}/></div>${c}</button>`)}</div>
+<div className="sec"><b>Recently listed</b><button onClick=${()=>X.tabTo('explore')}>See all</button></div>
+<div className="grid">${[...L].sort((a,b)=>a.days-b.days).slice(0,6).map(p=>html`<${Card} key=${p.id} p=${p}/>`)}</div>
+<div className="sec"><b>Popular on campus</b></div>
+<div className="row pop">${L.filter(p=>p.pop).map(p=>html`<${Card} key=${p.id} p=${p}/>`)}</div>
+<div className="cta"><b>Graduating soon? Pass it on.</b><p>List what you no longer need. A fresher gets a fair price, you save the hassle of packing.</p><button className="btn w sm" onClick=${()=>X.tabTo('sell')}><${Ic} n="plus" s=${18}/>Sell an item</button></div></div>`}
+
+function Explore(){const X=useX(),F=X.F,[fo,setFo]=useState(false),set=o=>X.setF({...F,...o}),q=X.q.toLowerCase();
+let L=X.S.items.filter(i=>i.st==='Active'&&(F.cat==='All'||i.c===F.cat)&&(!F.cond.length||F.cond.includes(i.cond))&&(!F.min||i.p>=+F.min)&&(!F.max||i.p<=+F.max)&&(i.t+' '+i.d).toLowerCase().includes(q));
+L=[...L].sort((a,b)=>F.sort==='lo'?a.p-b.p:F.sort==='hi'?b.p-a.p:a.days-b.days);
+const n=F.cond.length+(F.min?1:0)+(F.max?1:0),clear=()=>{X.setF({cat:'All',cond:[],min:'',max:'',sort:'new'});X.setQ('')};
+return html`<div className="scr"><${Bar} t="Explore"/>
+<label className="search"><${Ic} n="search"/><input autoFocus=${!!X.fo} placeholder="Search listings" value=${X.q} onChange=${e=>X.setQ(e.target.value)}/>${X.q&&html`<button aria-label="Clear" onClick=${()=>X.setQ('')}><${Ic} n="x" s=${18}/></button>`}</label>
+<div className="chips" style=${{marginTop:12}}>${['All',...CATS].map(c=>html`<button key=${c} className=${'chip'+(F.cat===c?' on':'')} onClick=${()=>set({cat:c})}>${c}</button>`)}</div>
+<div style=${{display:'flex',justifyContent:'space-between',alignItems:'center',margin:'14px 0 10px',gap:8}}><button className="chip" onClick=${()=>setFo(!fo)} style=${{display:'flex',gap:6,alignItems:'center'}}><${Ic} n="sl" s=${15}/>Filters${n?' ('+n+')':''}</button>
+<select className="chip" value=${F.sort} onChange=${e=>set({sort:e.target.value})}><option value="new">Newest</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select></div>
+${fo&&html`<div className="box" style=${{marginTop:0,marginBottom:12}}><b style=${{fontSize:13.5}}>Price range (₹)</b><div className="g2" style=${{marginTop:8}}><input className="inp" inputMode="numeric" placeholder="Min" value=${F.min} onChange=${e=>set({min:e.target.value.replace(/\D/g,'')})}/><input className="inp" inputMode="numeric" placeholder="Max" value=${F.max} onChange=${e=>set({max:e.target.value.replace(/\D/g,'')})}/></div>
+<b style=${{fontSize:13.5,display:'block',margin:'14px 0 8px'}}>Condition</b><div style=${{display:'flex',gap:8,flexWrap:'wrap'}}>${CONDS.map(([c])=>html`<button key=${c} className=${'chip'+(F.cond.includes(c)?' on':'')} onClick=${()=>set({cond:F.cond.includes(c)?F.cond.filter(x=>x!==c):[...F.cond,c]})}>${c}</button>`)}</div></div>`}
+<div style=${{color:'var(--mut)',fontSize:12.5,marginBottom:10}}>${L.length} listing${L.length==1?'':'s'}</div>
+${L.length?html`<div className="grid">${L.map(p=>html`<${Card} key=${p.id} p=${p}/>`)}</div>`:html`<div className="empty"><${Gl} k="books"/><b>No matching listings</b>Try a different search or loosen your filters.<div style=${{marginTop:14}}><button className="btn s sm" onClick=${clear}>Clear all filters</button></div></div>`}</div>`}
+
+function Detail({id}){const X=useX(),p=X.S.items.find(i=>i.id===id),[g,setG]=useState(0),[sh,setSh]=useState(false);
+const mine=X.S.tx.find(t=>t.role==='buy'&&t.pid===id&&t.st!=='Cancelled'),n=p.imgs&&p.imgs.length?p.imgs.length:3,sim=X.S.items.filter(i=>i.id!==id&&i.st==='Active').sort((a,b)=>(b.c===p.c)-(a.c===p.c)).slice(0,4);
+return html`<div className="scr"><${Bar} t="" back=${X.back}/>
+<div className="gal" onScroll=${e=>setG(Math.round(e.target.scrollLeft/e.target.clientWidth))}>${Array.from({length:n},(_,i)=>html`<div key=${i}><${Img} p=${p} i=${i}/></div>`)}</div><span className="cnt">${g+1}/${n}</span>
+<div style=${{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:10,marginTop:16}}><h2 style=${{fontSize:21,lineHeight:1.2}}>${p.t}</h2><${Pill} c=${p.cond}/></div>
+<div className="cp" style=${{fontSize:26,margin:'8px 0'}}>${fmt(p.p)}</div>
+<p style=${{color:'var(--mut)'}}>${p.d}</p>
+<div className="box" style=${{display:'grid',gap:10}}>${[['pin','Campus','IIT Indore'+(p.loc?' · '+p.loc:'')],['tag','Category',p.c||'Not specified'],['clock','Availability',p.st==='Active'?p.av||'Available':p.st]].map(([i,a,b])=>html`<div key=${a} style=${{display:'flex',gap:10,alignItems:'center'}}><span style=${{color:'var(--bl)'}}><${Ic} n=${i} s=${18}/></span><span style=${{color:'var(--mut)',width:86}}>${a}</span><b style=${{fontWeight:500}}>${b}</b></div>`)}</div>
+<div className="note"><${Ic} n="lock" s=${18}/><span>The seller stays anonymous. 4 to 1 coordinates the request, payment and handover. There is no chat or direct contact.</span></div>
+<div className="note"><${Ic} n="info" s=${18}/><span>${DISC}</span></div>
+${sim.length>0&&html`<div className="sec"><b>Similar listings</b></div><div className="row pop">${sim.map(s=>html`<${Card} key=${s.id} p=${s}/>`)}</div>`}
+<div className="act"><div className="cp">${fmt(p.p)}</div>${p.own?html`<div className="btn s" style=${{flex:1}}>This is your listing</div>`:mine?html`<button className="btn s" style=${{flex:1}} onClick=${()=>{X.setAt('buy');X.tabTo('activity')}}>Requested · View status</button>`:html`<button className="btn" style=${{flex:1}} disabled=${p.st!=='Active'} onClick=${()=>setSh(true)}>${p.st==='Active'?'Request to buy':p.st}</button>`}</div>
+${sh&&html`<${Sheet} close=${()=>setSh(false)}><h2 className="h1" style=${{fontSize:18,marginBottom:6}}>Request to buy</h2><p style=${{color:'var(--mut)',marginBottom:10}}>${p.t} · <b>${fmt(p.p)}</b></p>
+${['4 to 1 receives your request and checks with the seller.','Availability and details are confirmed.','You get payment instructions through 4 to 1.','4 to 1 schedules collection and marks the sale complete.'].map((s,i)=>html`<div key=${i} style=${{display:'flex',gap:10,padding:'7px 0'}}><b style=${{color:'var(--bl)',width:18}}>${i+1}</b><span>${s}</span></div>`)}
+<div className="note"><${Ic} n="info" s=${18}/><span>No payment is taken now, and the item is not held until 4 to 1 confirms.</span></div>
+<button className="btn" style=${{marginTop:16}} onClick=${()=>{X.A.req(id);setSh(false);X.flash('Request submitted')}}>Submit request</button><//>`}</div>`}
+
+function Sell({edit,done}){const X=useX(),[f,setF]=useState(edit?{imgs:edit.imgs||[],t:edit.t,d:edit.d,p:String(edit.p),cond:edit.cond,c:edit.c||'',loc:edit.loc||'',av:edit.av||''}:{imgs:[],t:'',d:'',p:'',cond:'',c:'',loc:'',av:''}),[e,setE]=useState({}),[st,setSt]=useState(0),[ni,setNi]=useState(),fr=useRef();
+const set=o=>setF(x=>({...x,...o}));
+const pick=ev=>{[...ev.target.files].slice(0,5-f.imgs.length).forEach(file=>{const u=URL.createObjectURL(file),im=new Image();im.onload=()=>{const r=Math.min(1,480/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*r;c.height=im.height*r;c.getContext('2d').drawImage(im,0,0,c.width,c.height);setF(x=>({...x,imgs:[...x.imgs,c.toDataURL('image/jpeg',.7)].slice(0,5)}));URL.revokeObjectURL(u)};im.src=u});ev.target.value=''};
+const mk=()=>({...(edit||{}),id:edit?edit.id:Date.now(),t:f.t.trim(),d:f.d.trim(),p:+f.p,cond:f.cond,c:f.c||'Others',loc:f.loc,av:f.av||'Available now',imgs:f.imgs,art:edit?edit.art:CA[f.c]||'bucket',h:edit?edit.h:Math.floor(Math.random()*360),days:edit?edit.days:0,own:true,st:edit?edit.st:'Active',pop:0});
+const review=()=>{const r={};if(!f.imgs.length&&!edit)r.imgs='Add at least one photo.';if(f.t.trim().length<3)r.t='Enter a title.';if(f.d.trim().length<10)r.d='Describe the item in at least 10 characters.';if(!(+f.p>0))r.p='Enter an asking price.';if(!f.cond)r.cond='Choose a condition.';setE(r);if(!Object.keys(r).length){edit?(X.A.item(mk(),0),X.flash('Changes saved'),done()):setSt(1)}};
+const Er=({k})=>e[k]?html`<div className="err">${e[k]}</div>`:null;
+if(st==2)return html`<div className="scr"><div className="empty" style=${{paddingTop:70}}><div className="av" style=${{margin:'0 auto 16px',background:'#1f9a70'}}><${Ic} n="check" s=${34}/></div><b style=${{fontSize:20}}>Your listing is live</b>Students at IIT Indore can now find it. You’ll see requests under My Listings.<div style=${{display:'grid',gap:10,marginTop:22}}><button className="btn" onClick=${()=>X.open(ni.id)}>View listing</button><button className="btn s" onClick=${()=>X.go('mine')}>Go to My Listings</button></div></div></div>`;
+if(st==1){const it=mk();return html`<div className="scr"><${Bar} t="Review" back=${()=>setSt(0)}/><p style=${{color:'var(--mut)',marginBottom:12}}>This is how your listing will appear.</p><div style=${{maxWidth:200}}><${Card} p=${it}/></div><p style=${{margin:'14px 0',color:'var(--mut)'}}>${it.d}</p><div className="note"><${Ic} n="lock" s=${18}/><span>Your name and contact details are never shown. 4 to 1 handles all buyer requests.</span></div><button className="btn" style=${{marginTop:16}} onClick=${()=>{X.A.item(it,1);setNi(it);setSt(2)}}>Publish listing</button></div>`}
+return html`<div className="scr"><${Bar} t=${edit?'Edit listing':'Sell an item'} back=${edit?done:null}/>
+<span className="lab" style=${{marginTop:4}}>Photos *<small> up to 5</small></span><div className="ph5">${f.imgs.map((s,i)=>html`<div key=${i}><img src=${s} alt=""/><button className="x" aria-label="Remove photo" onClick=${()=>set({imgs:f.imgs.filter((_,j)=>j!==i)})}><${Ic} n="x" s=${13}/></button></div>`)}${f.imgs.length<5&&html`<button className="add" aria-label="Add photo" onClick=${()=>fr.current.click()}><${Ic} n="image" s=${24}/></button>`}</div><input ref=${fr} type="file" accept="image/*" multiple hidden onChange=${pick}/><${Er} k="imgs"/>
+<label className="lab">Title *</label><input className="inp" maxLength="70" placeholder="e.g. Casio fx-991ES Plus" value=${f.t} onChange=${x=>set({t:x.target.value})}/><${Er} k="t"/>
+<label className="lab">Description *</label><textarea className="inp" rows="3" placeholder="Age, wear, what’s included" value=${f.d} onChange=${x=>set({d:x.target.value})}/><${Er} k="d"/>
+<label className="lab">Asking price (₹) *</label><input className="inp" inputMode="numeric" placeholder="0" value=${f.p} onChange=${x=>set({p:x.target.value.replace(/\D/g,'')})}/><${Er} k="p"/>
+<label className="lab">Condition *</label><div className="g2">${CONDS.map(([c,d])=>html`<button key=${c} className=${'opt'+(f.cond===c?' on':'')} onClick=${()=>set({cond:c})}><b>${c}</b><small>${d}</small></button>`)}</div><${Er} k="cond"/>
+<label className="lab" style=${{marginTop:24}}>Optional details</label>
+<select className="inp" value=${f.c} onChange=${x=>set({c:x.target.value})}><option value="">Category</option>${CATS.map(c=>html`<option key=${c}>${c}</option>`)}</select>
+<input className="inp" style=${{marginTop:10}} placeholder="Location (e.g. hostel area)" value=${f.loc} onChange=${x=>set({loc:x.target.value})}/>
+<select className="inp" style=${{marginTop:10}} value=${f.av} onChange=${x=>set({av:x.target.value})}><option value="">Availability</option><option>Available now</option><option>Available from next month</option><option>Available before I graduate</option></select>
+<p style=${{color:'var(--mut)',fontSize:12.5,margin:'8px 0 16px'}}>Clothing can’t be listed on 4 to 1.</p>
+<button className="btn" onClick=${review}>${edit?'Save changes':'Preview listing'}</button></div>`}
+
+function TxCard({t}){const X=useX(),p=X.S.items.find(i=>i.id===t.pid),[o,setO]=useState(false),s=STEP[t.st],sell=t.role==='sell';
+return html`<div className="tx"><button className="tr" onClick=${()=>setO(!o)}><div className="th"><${Img} p=${p}/></div><div style=${{flex:1,minWidth:0}}><div className="ct">${p.t}</div><div style=${{fontWeight:700}}>${fmt(p.p)}</div><span className="pill" style=${{color:SC(t.st),marginTop:3}}>${t.st}</span></div><${Ic} n="next" s=${18}/></button>
+<div className="prog">${STEPS.map((_,i)=>html`<i key=${i} className=${i<=s?'f':''}/>`)}</div>
+${o&&html`<div className="tl">${STEPS.map((a,i)=>html`<div key=${a} className=${(i<=s?'f ':'')+(i==s?'c':'')}><i>${i<=s&&html`<${Ic} n="check" s=${11}/>`}</i>${a}</div>`)}</div>
+<p style=${{fontSize:13,color:'var(--mut)',margin:'6px 0'}}>${SX[t.st]}</p>
+<p style=${{fontSize:12.5,color:'var(--mut)',display:'flex',gap:6,alignItems:'center'}}><${Ic} n="lock" s=${13}/>${sell?'Buyer #'+(t.b||'1042')+' · identity kept private':'Seller · identity kept private'} · ${t.w}</p>
+${t.st==='Payment Pending'&&!sell&&html`<div className="note"><span>Simulated payment instructions: pay ${fmt(p.p)} using the secure link 4 to 1 shares. Ref 4T1-${String(t.id).slice(-4)}. No real payment details are shown in this prototype.</span></div>`}
+<div style=${{display:'flex',gap:8,marginTop:12}}>${NEXT[t.st]&&html`<button className="btn sm" style=${{flex:1}} onClick=${()=>X.A.st(t.id,NEXT[t.st])}>${t.st==='Payment Pending'&&!sell?'I’ve paid (simulate)':'Simulate: '+NEXT[t.st]}</button>`}${s>=0&&s<3&&html`<button className="btn s sm" onClick=${()=>X.A.st(t.id,'Cancelled')}>Cancel</button>`}</div>`}</div>`}
+
+function Activity(){const X=useX(),L=X.S.tx.filter(t=>t.role===X.at);
+return html`<div className="scr"><${Bar} t="Activity"/><div className="seg">${[['buy','My purchases'],['sell','My sales']].map(([k,l])=>html`<button key=${k} className=${X.at===k?'on':''} onClick=${()=>X.setAt(k)}>${l}</button>`)}</div>
+${L.length?L.map(t=>html`<${TxCard} key=${t.id} t=${t}/>`):html`<div className="empty"><${Gl} k="bucket"/><b>Nothing here yet</b>${X.at==='buy'?'Requests you make will show up here.':'Requests on your listings will show up here.'}</div>`}</div>`}
+
+function Mine(){const X=useX(),own=X.S.items.filter(i=>i.own),sold=X.S.tx.filter(t=>t.role==='sell'&&t.st==='Completed'),rev=sold.reduce((a,t)=>a+X.S.items.find(i=>i.id===t.pid).p,0);
+return html`<div className="scr"><${Bar} t="My listings" back=${X.back}/><div className="stat"><div><b>${own.filter(i=>i.st==='Active').length}</b><span>Active</span></div><div><b>${X.S.tx.filter(t=>t.role==='sell'&&STEP[t.st]>=0&&STEP[t.st]<4).length}</b><span>Open requests</span></div><div><b>${fmt(rev)}</b><span>${sold.length} sold</span></div></div><div style=${{marginTop:14}}>
+${own.map(p=>{const rq=X.S.tx.filter(t=>t.role==='sell'&&t.pid===p.id);return html`<div className="tx" key=${p.id}><div className="tr"><div className="th"><${Img} p=${p}/></div><div style=${{flex:1,minWidth:0}}><div className="ct">${p.t}</div><b>${fmt(p.p)}</b><div style=${{fontSize:12,color:p.st==='Active'?'#1f9a70':'var(--mut)',fontWeight:700}}>${p.st==='Active'?'Active':p.st}</div></div></div>
+${rq.map(t=>html`<div key=${t.id} style=${{fontSize:12.5,color:'var(--mut)',marginTop:8}}>Request from Buyer #${t.b||'1042'} · <b style=${{color:SC(t.st)}}>${t.st}</b></div>`)}
+${p.st!=='Sold'&&html`<div style=${{display:'flex',gap:8,marginTop:12}}><button className="btn s sm" style=${{flex:1}} onClick=${()=>X.go('edit',p.id)}>Edit</button><button className="btn s sm" style=${{flex:1}} onClick=${()=>X.A.item({...p,st:p.st==='Active'?'Unavailable':'Active'},0)}>${p.st==='Active'?'Mark unavailable':'Mark available'}</button></div>`}</div>`})}</div></div>`}
+
+function Notifs(){const X=useX();
+const tap=n=>{X.upd(s=>({...s,nf:s.nf.map(x=>x.id===n.id?{...x,u:0}:x)}));const[a,b]=n.to;if(a==='act'){X.setAt(b);X.tabTo('activity')}else if(a==='mine')X.go('mine')};
+return html`<div className="scr"><${Bar} t="Notifications" back=${X.back} right=${html`<button style=${{color:'var(--bl)',fontWeight:700,fontSize:13}} onClick=${()=>X.upd(s=>({...s,nf:s.nf.map(n=>({...n,u:0}))}))}>Mark all read</button>`}/>${X.S.nf.map(n=>html`<button key=${n.id} className=${'nrow'+(n.u?' u':'')} onClick=${()=>tap(n)}><span className="ib"><${Ic} n=${n.k} s=${18}/></span><span style=${{flex:1}}><span style=${{display:'block',fontWeight:n.u?700:400}}>${n.t}</span><small style=${{color:'var(--mut)'}}>${n.w}</small></span></button>`)}</div>`}
+
+function Profile(){const X=useX(),[sh,setSh]=useState(0),M=(i,l,f)=>html`<button className="mr" onClick=${f}><${Ic} n=${i}/><span>${l}</span><${Ic} n="next" s=${18}/></button>`;
+return html`<div className="scr"><${Bar} t="Profile"/><div style=${{display:'flex',gap:16,alignItems:'center'}}><div className="av">AM</div><div><h2 style=${{fontSize:20}}>Aarav Mehta</h2><span className="pill" style=${{color:'#1f9a70',display:'inline-flex',gap:4,alignItems:'center',marginTop:4}}><${Ic} n="shield" s=${13}/>Verified student</span></div></div>
+<div className="box" style=${{display:'grid',gap:8}}><div style=${{display:'flex',justifyContent:'space-between'}}><span style=${{color:'var(--mut)'}}>Campus</span><b style=${{display:'flex',gap:6,alignItems:'center'}}><${Ic} n="lock" s=${14}/>IIT Indore</b></div><div style=${{display:'flex',justifyContent:'space-between'}}><span style=${{color:'var(--mut)'}}>Academic year</span><b>3rd year, B.Tech</b></div><small style=${{color:'var(--mut)'}}>Campus is tied to your verified student ID and can’t be changed.</small></div>
+<div className="box" style=${{padding:'0 14px'}}>${M('tag','My listings',()=>X.go('mine'))}${M('box','My purchases',()=>{X.setAt('buy');X.tabTo('activity')})}${M('list','My sales',()=>{X.setAt('sell');X.tabTo('activity')})}${M('info','Marketplace information',()=>setSh('info'))}${M('sl','Settings',()=>setSh('set'))}${M('out','Log out',()=>setSh('out'))}</div>
+${sh&&html`<${Sheet} close=${()=>setSh(0)}>${sh==='info'?html`<h2 className="h1" style=${{fontSize:18,marginBottom:10}}>How 4 to 1 works</h2><p style=${{color:'var(--mut)'}}>${DISC}</p><div className="note"><${Ic} n="lock" s=${18}/><span>Buyers and sellers never see each other’s identity or contact details. 4 to 1 coordinates requests, payment and handover.</span></div>`:sh==='set'?html`<h2 className="h1" style=${{fontSize:18,marginBottom:10}}>Settings</h2>${['Push notifications','Email updates'].map(s=>html`<label key=${s} style=${{display:'flex',justifyContent:'space-between',padding:'12px 0'}}>${s}<input type="checkbox" defaultChecked/></label>`)}<button className="btn s" style=${{marginTop:10}} onClick=${()=>{try{localStorage.removeItem(K)}catch(e){}location.reload()}}>Reset demo data</button>`:html`<h2 className="h1" style=${{fontSize:18,marginBottom:10}}>Log out?</h2><p style=${{color:'var(--mut)',marginBottom:16}}>This is a simulated logout.</p><button className="btn" onClick=${()=>{setSh(0);X.setOut(1)}}>Log out</button>`}<//>`}</div>`}
+
+function App(){const [S,setS]=useState(load),[tab,setTab]=useState('home'),[stack,setSt]=useState([]),[q,setQ]=useState(''),[fo,setFo]=useState(0),[at,setAt]=useState('buy'),[out,setOut]=useState(0),[toast,setT]=useState(''),[F,setF]=useState({cat:'All',cond:[],min:'',max:'',sort:'new'});
+React.useEffect(()=>save(S),[S]);
+const upd=f=>setS(f),top=stack[stack.length-1];
+const X={S,upd,q,setQ,fo,setFo,at,setAt,F,setF,setOut,go:(v,a)=>setSt(s=>[...s,{v,a}]),back:()=>setSt(s=>s.slice(0,-1)),open:id=>setSt(s=>[...s,{v:'p',a:id}]),tabTo:t=>{setTab(t);setSt([]);if(t!=='explore')setFo(0)},flash:m=>{setT(m);setTimeout(()=>setT(''),2200)},
+A:{req:pid=>upd(s=>{const p=s.items.find(i=>i.id===pid);return{...s,tx:[{id:'T'+Date.now(),pid,role:'buy',st:'Request Submitted',w:'Just now'},...s.tx],nf:[N(`Request for “${p.t}” submitted. 4 to 1 will coordinate with the seller.`,['act','buy'],'box'),...s.nf]}}),
+st:(tid,st)=>upd(s=>{const t=s.tx.find(x=>x.id===tid),p=s.items.find(i=>i.id===t.pid);return{...s,tx:s.tx.map(x=>x.id===tid?{...x,st,w:'Just now'}:x),items:st==='Completed'&&t.role==='sell'?s.items.map(i=>i.id===p.id?{...i,st:'Sold'}:i):s.items,nf:[N(`“${p.t}”: ${st}.`,['act',t.role],st==='Completed'?'check':'box'),...s.nf]}}),
+item:(it,nw)=>upd(s=>({...s,items:s.items.some(i=>i.id===it.id)?s.items.map(i=>i.id===it.id?it:i):[it,...s.items],nf:nw?[N(`Your listing “${it.t}” is live.`,['mine'],'tag'),...s.nf]:s.nf}))}};
+if(out)return html`<div id="app" style=${{placeItems:'center',display:'grid',textAlign:'center',padding:30}}><div><div className="logo" style=${{fontSize:40}}>4 to 1</div><p style=${{color:'var(--mut)',margin:'8px 0 24px'}}>You’re logged out.</p><button className="btn" onClick=${()=>setOut(0)}>Sign in as Aarav (simulated)</button></div></div>`;
+const T=[['home','Home','home'],['explore','Explore','compass'],['sell','Sell','plus'],['activity','Activity','list'],['profile','Profile','user']];
+let V;if(top){const{v,a}=top;V=v==='p'?html`<${Detail} key=${a} id=${a}/>`:v==='notifs'?html`<${Notifs}/>`:v==='mine'?html`<${Mine}/>`:html`<${Sell} edit=${S.items.find(i=>i.id===a)} done=${X.back}/>`}else V=tab==='home'?html`<${Home}/>`:tab==='explore'?html`<${Explore}/>`:tab==='sell'?html`<${Sell} key=${Date.now()>0&&tab}/>`:tab==='activity'?html`<${Activity}/>`:html`<${Profile}/>`;
+return html`<${Cx.Provider} value=${X}>${V}<nav className="nav">${T.map(([k,l,i])=>html`<button key=${k} className=${(tab===k?'on ':'')+(k==='sell'?'sell':'')} onClick=${()=>X.tabTo(k)} aria-label=${l}>${k==='sell'?html`<span><${Ic} n="plus" s=${26}/></span>`:html`<${Ic} n=${i}/>`}${l}</button>`)}</nav>${toast&&html`<div className="toast">${toast}</div>`}<//>`}
+ReactDOM.createRoot(document.getElementById('app')).render(html`<${App}/>`);
+</script></body></html>
